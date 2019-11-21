@@ -1,0 +1,101 @@
+<!-- Validation failure messages -->
+<% if @flight.present? %>
+  <% if @flight.errors.any? %>
+    <% @flight.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new flight
+</h1>
+
+
+<hr>
+
+<!-- Form flight start -->
+<form action="/create_flight" method="post">
+<!-- Form flight end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @flight.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for departs_at start -->
+  <div class="form-group">
+    <label for="departs_at">
+      Departs at
+    </label>
+
+    <!-- Input for departs_at start -->
+    <input type="text" id="departs_at" name="departs_at" class="form-control" value="<%= @flight.departs_at %>">
+    <!-- Input for departs_at end -->
+  </div>
+  <!-- Label and input for departs_at end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @flight.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for ten_minute_message_sent start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="ten_minute_message_sent">
+    <!-- Input for ten_minute_message_sent start -->
+    <input id="ten_minute_message_sent" class="form-check-input" name="ten_minute_message_sent" type="checkbox" <%= "checked" if @flight.ten_minute_message_sent %>>
+    <!-- Input for ten_minute_message_sent end -->
+    <label for="ten_minute_message_sent" class="form-check-label">
+      Ten minute message sent
+    </label>
+  </div>
+
+  <!-- Label and input for five_minute_message_sent start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="five_minute_message_sent">
+    <!-- Input for five_minute_message_sent start -->
+    <input id="five_minute_message_sent" class="form-check-input" name="five_minute_message_sent" type="checkbox" <%= "checked" if @flight.five_minute_message_sent %>>
+    <!-- Input for five_minute_message_sent end -->
+    <label for="five_minute_message_sent" class="form-check-label">
+      Five minute message sent
+    </label>
+  </div>
+
+  <!-- Label and input for one_minute_message_sent start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="one_minute_message_sent">
+    <!-- Input for one_minute_message_sent start -->
+    <input id="one_minute_message_sent" class="form-check-input" name="one_minute_message_sent" type="checkbox" <%= "checked" if @flight.one_minute_message_sent %>>
+    <!-- Input for one_minute_message_sent end -->
+    <label for="one_minute_message_sent" class="form-check-label">
+      One minute message sent
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create flight
+  </button>
+</form>
+
+<hr>
+
+<a href="/flights">
+  Go back
+</a>
