@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
   def index
-    @flights = Flight.page(params[:page]).per(10)
+    @q = Flight.ransack(params[:q])
+    @flights = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("flight_templates/index.html.erb")
   end
