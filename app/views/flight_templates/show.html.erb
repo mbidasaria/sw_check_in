@@ -52,7 +52,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @flight.user_id %>
+        <% if @flight.user.present? %>
+          <a href="/users/<%= @flight.user_id %>">
+            <%= @flight.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
