@@ -36,6 +36,25 @@ class FlightsController < ApplicationController
     end
   end
 
+  def create_row_from_user
+    @flight = Flight.new
+
+    @flight.description = params.fetch("description")
+    @flight.departs_at = params.fetch("departs_at")
+    @flight.user_id = params.fetch("user_id")
+    @flight.ten_minute_message_sent = params.fetch("ten_minute_message_sent")
+    @flight.five_minute_message_sent = params.fetch("five_minute_message_sent")
+    @flight.one_minute_message_sent = params.fetch("one_minute_message_sent")
+
+    if @flight.valid?
+      @flight.save
+
+      redirect_to("/users/#{@flight.user_id}", notice: "Flight created successfully.")
+    else
+      render("flight_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @flight = Flight.find(params.fetch("prefill_with_id"))
 
