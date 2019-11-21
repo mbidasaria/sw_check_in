@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:flights) }
+
     end
 
     describe "InDirect Associations" do
