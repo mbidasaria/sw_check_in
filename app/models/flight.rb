@@ -5,4 +5,6 @@ class Flight < ApplicationRecord
 
   # Validations
 
+  validates :departs_at, :presence => true
+
 end
