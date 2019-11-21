@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @user.flights.each do |flight| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/flights/<%= flight.id %>">
           <%= flight.description %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_flight_from_user/<%= flight.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="user_flights_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "user_templates/user_flights_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

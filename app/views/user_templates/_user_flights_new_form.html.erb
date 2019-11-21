@@ -1,64 +1,42 @@
-<!-- Form flight start -->
 <form action="/create_flight_from_user" method="post">
-<!-- Form flight end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control" value="<%= @flight.description %>">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for departs_at start -->
   <div class="form-group">
     <label for="departs_at">
       Departs at
     </label>
 
-    <!-- Input for departs_at start -->
     <input type="text" id="departs_at" name="departs_at" class="form-control" value="<%= @flight.departs_at %>">
-    <!-- Input for departs_at end -->
   </div>
-  <!-- Label and input for departs_at end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for user_id start -->
   <input type="hidden" name="user_id" value="<%= @user.id %>">
-  <!-- Input for user_id end -->
 
-  <!-- Label and input for ten_minute_message_sent start -->
   <div class="form-group">
     <label for="ten_minute_message_sent">
       Ten minute message sent
     </label>
-    <!-- Input for ten_minute_message_sent start -->
     <input id="ten_minute_message_sent" class="form-check-input" name="ten_minute_message_sent" type="checkbox" <%= "checked" if @flight.ten_minute_message_sent %>>
-    <!-- Input for ten_minute_message_sent end -->
   </div>
 
-  <!-- Label and input for five_minute_message_sent start -->
   <div class="form-group">
     <label for="five_minute_message_sent">
       Five minute message sent
     </label>
-    <!-- Input for five_minute_message_sent start -->
     <input id="five_minute_message_sent" class="form-check-input" name="five_minute_message_sent" type="checkbox" <%= "checked" if @flight.five_minute_message_sent %>>
-    <!-- Input for five_minute_message_sent end -->
   </div>
 
-  <!-- Label and input for one_minute_message_sent start -->
   <div class="form-group">
     <label for="one_minute_message_sent">
       One minute message sent
     </label>
-    <!-- Input for one_minute_message_sent start -->
     <input id="one_minute_message_sent" class="form-check-input" name="one_minute_message_sent" type="checkbox" <%= "checked" if @flight.one_minute_message_sent %>>
-    <!-- Input for one_minute_message_sent end -->
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

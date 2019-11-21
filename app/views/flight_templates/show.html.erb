@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link flight start -->
       <div class="col">
         <a href="/flights/<%= @flight.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit flight
         </a>
       </div>
-      <!-- Edit link flight end -->
 
-      <!-- Delete link flight start -->
       <div class="col">
         <a href="/delete_flight/<%= @flight.id %>" class="btn btn-block btn-outline-secondary">
           Delete flight
         </a>
       </div>
-      <!-- Delete link flight end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @flight.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Departs at
       </dt>
-      <!-- Display departs_at start -->
       <dd>
         <%= @flight.departs_at %>
       </dd>
-      <!-- Display departs_at end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @flight.user.present? %>
           <a href="/users/<%= @flight.user_id %>">
@@ -58,55 +49,42 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Ten minute message sent
       </dt>
-      <!-- Display ten_minute_message_sent start -->
       <dd>
         <%= @flight.ten_minute_message_sent %>
       </dd>
-      <!-- Display ten_minute_message_sent end -->
 
       <dt>
         Five minute message sent
       </dt>
-      <!-- Display five_minute_message_sent start -->
       <dd>
         <%= @flight.five_minute_message_sent %>
       </dd>
-      <!-- Display five_minute_message_sent end -->
 
       <dt>
         One minute message sent
       </dt>
-      <!-- Display one_minute_message_sent start -->
       <dd>
         <%= @flight.one_minute_message_sent %>
       </dd>
-      <!-- Display one_minute_message_sent end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@flight.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@flight.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
